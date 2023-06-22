@@ -100,10 +100,15 @@ img {
     background-color: #ffffff;
     position: fixed;
     top: var(--altura-header);
-    right: 0;
+    right: -100%;
+    transition: right 0.3s;
     display: flex;
     flex-direction: column;
     padding: 1rem;
+}
+
+.cart__show {
+    right: 0;
 }
 
 .cart__products {

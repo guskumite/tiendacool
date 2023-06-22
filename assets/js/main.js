@@ -43,6 +43,16 @@ function printProducts(db) {
 
 }
 
+function handleShowCart() {
+  const iconCartHTML = document.querySelector(".bx-cart"); /* el icono selector del carrito */
+  const cartHTML = document.querySelector(".cart"); /* la franja que muestra el carrito de compras */
+
+  iconCartHTML.addEventListener("click", function () {
+      cartHTML.classList.toggle("cart__show");
+  });
+
+}
+
 (async () => {
   
   const db = {
@@ -54,6 +64,8 @@ function printProducts(db) {
       };
   
   printProducts(db);
+  handleShowCart();
+
 
 })();
 
