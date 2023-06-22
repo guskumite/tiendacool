@@ -1,7 +1,7 @@
 async function getProducts() {
     try {
            const data = await fetch(
-               "https://ofertasypromocionesdigitales.tk/ecommerce/data.json"
+               "./data.json"
         );
         
            const res = await data.json();
