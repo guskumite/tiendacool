@@ -1,30 +1,25 @@
 async function getProducts() {
-    try {
-           const data = await fetch(
-               "./data.json"
-        );
-        
-           const res = await data.json();
-        
-/* como el catálogo de productos viene de json hay que guardarlo en local storage pero volviendolo string */
-           window.localStorage.setItem("products", JSON.stringify(res));
+  try {
+    const data = await fetch("./data.json");
 
-           return res;
-        } catch (error) {
-              console.log(error);
-        }       
-        
+    const res = await data.json();
+
+    /* como el catálogo de productos viene de json hay que guardarlo en local storage pero volviendolo string */
+    window.localStorage.setItem("products", JSON.stringify(res));
+
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function printProducts(db) {
-  
   const productsHTML = document.querySelector(".products");
 
   let html = "";
 
   for (const product of db.products) {
-  
-      html += `
+    html += `
          <div class="product">
             <div class="product__img">
                <img src="${product.image}" alt="imagen" />
@@ -40,33 +35,63 @@ function printProducts(db) {
   }
 
   productsHTML.innerHTML = html;
-
 }
 
 function handleShowCart() {
-  const iconCartHTML = document.querySelector(".bx-cart"); /* el icono selector del carrito */
-  const cartHTML = document.querySelector(".cart"); /* la franja que muestra el carrito de compras */
+  const iconCartHTML =
+    document.querySelector(".bx-cart"); /* el icono selector del carrito */
+  const cartHTML =
+    document.querySelector(
+      ".cart"
+    ); /* la franja que muestra el carrito de compras */
 
   iconCartHTML.addEventListener("click", function () {
-      cartHTML.classList.toggle("cart__show");
+    cartHTML.classList.toggle("cart__show");
   });
+}
 
+function addToCartFromProducts(db) {
+  const productsHTML = document.querySelector(".products");
+
+  productsHTML.addEventListener("click", function (e) {
+    if (e.target.classList.contains("bx-plus")) {
+      const id = Number(
+        e.target.id
+      ); /* es la llave de búsqueda para buscar la info del producto */
+
+      const productFind = db.products.find((product) => product.id === id);
+
+      /*hay que buscar si el producto ya existía previamente en el carrito */
+      /* si ya existe le sumo uno a amount (cantidad), de lo contrario inicializo en 1 */
+
+      if (db.cart[productFind.id]) {
+        /*antes de sumar a amount hay que verificar si se tiene suficiente producto en inventario */
+        if (productFind.quantity === db.cart[productFind.id].amount)
+          return alert("No tenemos más de este producto en bodega");
+        db.cart[productFind.id].amount++;
+      } else {
+        db.cart[productFind.id] = { ...productFind, amount: 1 };
+      }
+
+      window.localStorage.setItem("cart", JSON.stringify(db.cart));
+
+      console.log(db);
+    }
+  });
 }
 
 (async () => {
-  
   const db = {
-        products:
-            JSON.parse(window.localStorage.getItem("products")) || 
-            (await getProducts()),
-        cart:  {},
-      
-      };
-  
+    products:
+      JSON.parse(window.localStorage.getItem("products")) ||
+      (await getProducts()),
+    cart: JSON.parse(window.localStorage.getItem("cart")) || {},
+  };
+
   printProducts(db);
   handleShowCart();
 
-
+  addToCartFromProducts(db);
 })();
 
 /* let products = [

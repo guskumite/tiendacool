@@ -78,6 +78,10 @@ img {
     gap: 1rem;
 }
 
+.product__info h4 {
+    min-height: 54px;
+}
+
 .product__info span {
     font-weight: normal;
     font-size: 0.8rem;
@@ -120,3 +124,8 @@ img {
    height: 15%;
 }
 
+@media (max-width: 500px) {
+    .cart {
+        width: 100%;
+    }
+}    
