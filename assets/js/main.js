@@ -105,7 +105,7 @@ function adiciona(product, cart) {
     console.log(cart);
     if (found === 0) {
      
-      console.log(product);
+      console.log(product.id);
       if (cart.length === 0) {
          cart = [...product];
          cart[0].amount = 1;
