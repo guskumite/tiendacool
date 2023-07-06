@@ -103,7 +103,13 @@ function adiciona(product, cart) {
         }
     }
     if (found === 0) {
-       cart.push(product);
+       cart[large].id = product.id;
+       cart[large].name = product.name;
+       cart[large].price = product.price;
+       cart[large].category = product.category;
+       cart[large].description = product.description;
+       cart[large].image = product.image;
+       cart[large].quantity = product.quantity;
        cart[large].amount = 1;
     }
 }          
