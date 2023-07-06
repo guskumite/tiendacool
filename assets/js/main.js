@@ -172,7 +172,7 @@ function addDeleteorDiminish(db) {
     if (e.target.classList.contains("bx-minus")) {
       db.cart.forEach((element) => {
         if (Number(element.id) === theKey) {
-          if (element.amount >= 1) element.amount--;
+          if (element.amount > 0) element.amount--;
         }
       });
       db.cart = db.cart.filter(item => item.amount !== 0);
@@ -180,6 +180,8 @@ function addDeleteorDiminish(db) {
       printProductsInCart(db);
     }
     if (e.target.classList.contains("bx-trash")) {
+      const response = confirm("¿Estás seguro de eliminar este producto?");
+      if (!response) return;
       db.cart.forEach((element) => {
         if (Number(element.id) === theKey) {
           element.amount = 0;
