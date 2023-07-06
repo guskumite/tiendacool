@@ -95,6 +95,9 @@ function adiciona(product, cart) {
     
     let found = 0;
     let large = cart.length;
+    
+    let tmpArray = [product];
+    
     for (let i = 0; i <= cart.length - 1; i++) {
         if (product.id === cart[i].id) {
           found = 1;
@@ -106,10 +109,9 @@ function adiciona(product, cart) {
     if (found === 0) {
      
       console.log(product.id);
-      if (cart.length === 0) {
-         cart = [...product];
-         cart[0].amount = 1;
-      } else { cart.push(product); cart[large].amount = 1}
+
+      cart.push(tmpArray);
+      cart[large].amount = 1;
 
     }
 }          
