@@ -52,6 +52,7 @@ function printProductsInCart(db) {
   }
 
   cartProducts.innerHTML = html;
+  theTotalizer(db);
 }
 
 function printProducts(db) {
@@ -172,7 +173,7 @@ function addDeleteorDiminish(db) {
     if (e.target.classList.contains("bx-minus")) {
       db.cart.forEach((element) => {
         if (Number(element.id) === theKey) {
-          if (element.amount > 0) element.amount--;
+          if (element.amount > 1) element.amount--;
         }
       });
       db.cart = db.cart.filter(item => item.amount !== 0);
@@ -197,6 +198,27 @@ function addDeleteorDiminish(db) {
   printProductsInCart(db);
 }
 
+function theTotalizer(db) {
+
+  const infoTotal = document.querySelector("info_total");
+  const infoAmount = document.querySelector("info_amount");
+
+  let totalProducts = 0;
+  let totalAmount = 0;
+
+  for (const product in db.cart) {
+      
+      const {amount, price} = db.cart[product];
+      
+      totalProducts += price * amount;
+      totalAmount += amount;
+
+      infoTotal.textContent = "$" + totalProducts.toFixed(2);
+      infoAmount.textContent = totalAmount + " units";
+  }
+
+}
+
 (async () => {
   const db = {
     products:
@@ -213,6 +235,8 @@ function addDeleteorDiminish(db) {
   printProductsInCart(db);
 
   addDeleteorDiminish(db);
+
+  theTotalizer(db);
 })();
 
 /* let products = [
