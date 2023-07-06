@@ -102,6 +102,7 @@ function adiciona(product, cart) {
           else cart[i].amount++;
         }
     }
+    console.log(cart);
     if (found === 0) {
        cart[large].id = product.id;
        cart[large].name = product.name;
