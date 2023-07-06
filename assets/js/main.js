@@ -105,6 +105,7 @@ function adiciona(product, cart) {
     console.log(cart);
     if (found === 0) {
      
+      console.log(product);
       cart += [{...product, amount: 1}];
       
       /*cart.push({id: ${product.id}, name: ${product.name}, price: ${product.price}, 
