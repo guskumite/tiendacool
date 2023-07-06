@@ -99,19 +99,20 @@ function adiciona(product, cart) {
     let tmpArray = [product];
     
     for (let i = 0; i <= cart.length - 1; i++) {
-        if (product.id === cart[i].id) {
+        if (tmpArray[0].id === cart[i].id) {
           found = 1;
-          if (product.quantity === cart[i].amount) alert("No tenemos más de ese producto en existencia");
+          if (tmpArray[0].quantity === cart[i].amount) alert("No tenemos más de ese producto en existencia");
           else cart[i].amount++;
         }
     }
     console.log(cart);
     if (found === 0) {
      
-      console.log(product.id);
+      console.log(tmpArray[0]);
 
       cart.push(tmpArray);
       cart[large].amount = 1;
+      console.log(cart);
 
     }
 }          
