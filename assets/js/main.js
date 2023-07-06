@@ -91,34 +91,34 @@ function handleShowCart() {
   });
 }
 
-function adiciona(product, cart) {
+function adiciona(product, cart, id) {
     
     let found = 0;
     let large = cart.length;
     
     let tmpArray = [product];
-    console.log(tmpArray[0]);
     
-    for (let i = 0; i <= cart.length - 1; i++) {
-        if (tmpArray[0].id === cart[i].id) {
+    for (let i = 0; i <= large - 1; i++) {
+       if (cart[i].id === tmpArray[0].id) {
           found = 1;
-          if (tmpArray[0].quantity === cart[i].amount) alert("No tenemos más de ese producto en existencia");
-          else cart[i].amount++;
-        }
+       }
     }
-    console.log(cart);
+
+    if (found === 1) {
+
+       cart.forEach(element => {
+           if (element.id === id) {
+              if (element.amount === tmpArray[0].quantity) alert("No tenemos más de ese producto en existencia");
+              else element.amount++;
+           }
+          });    
+    }
+
     if (found === 0) {
-     
-      console.log(tmpArray[0]);
-
-      cart.push(tmpArray[0]);
-      cart[large].amount = 1;
-      cart[large].image = tmpArray[0].image;
-      
-      console.log(cart);
-
+        cart.push(tmpArray[0]);
+        cart[large].amount = 1;
     }
-}          
+  }
 
 function addToCartFromProducts(db) {
   const productsHTML = document.querySelector(".products");
@@ -137,7 +137,7 @@ function addToCartFromProducts(db) {
       /* si ya existe le sumo uno a amount (cantidad), de lo contrario inicializo en 1 */
 
       
-      adiciona(productFind,db.cart);
+      adiciona(productFind,db.cart,id);
       db.cart = db.cart.filter(Boolean);
 
       printProductsInCart(db);
@@ -165,7 +165,7 @@ function addToCartFromProducts(db) {
 
   addToCartFromProducts(db);
 
-  printProductsInCart(db);
+   printProductsInCart(db);
   
 
 })();
