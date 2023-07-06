@@ -106,22 +106,11 @@ function adiciona(product, cart) {
     if (found === 0) {
      
       console.log(product);
-      /*cart += [{...product, amount: 1}];*/
-      cart = cart.push(product);
-      /* cart[large].amount = 1; */
-      
-      /*cart.push({id: ${product.id}, name: ${product.name}, price: ${product.price}, 
-      category: ${product.category}, description: ${product.description}, image: ${product.image}, quantity: ${product.quantity},
-      amount: 1 }); */
-      
-      /*cart[large].id = product.id;
-       cart[large].name = product.name;
-       cart[large].price = product.price;
-       cart[large].category = product.category;
-       cart[large].description = product.description;
-       cart[large].image = product.image;
-       cart[large].quantity = product.quantity;
-       cart[large].amount = 1;*/
+      if (cart.length === 0) {
+         cart = [...product];
+         cart[0].amount = 1;
+      } else { cart.push(product); cart[large].amount = 1}
+
     }
 }          
 
