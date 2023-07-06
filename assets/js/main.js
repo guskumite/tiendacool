@@ -97,6 +97,7 @@ function adiciona(product, cart) {
     let large = cart.length;
     
     let tmpArray = [product];
+    console.log(tmpArray[0]);
     
     for (let i = 0; i <= cart.length - 1; i++) {
         if (tmpArray[0].id === cart[i].id) {
@@ -110,8 +111,10 @@ function adiciona(product, cart) {
      
       console.log(tmpArray[0]);
 
-      cart.push(tmpArray);
+      cart.push(tmpArray[0]);
       cart[large].amount = 1;
+      cart[large].image = tmpArray[0].image;
+      
       console.log(cart);
 
     }
