@@ -21,12 +21,11 @@ function printProductsInCart(db) {
   let html = "";
   let total = 0;
   let carrito = "";
-  
-  for (let i = 0; i <= db.cart.length - 1; i++) {
-      const { quantity, price, name, image, id, amount } = db.cart[i];
 
-      
-      html += `
+  for (let i = 0; i <= db.cart.length - 1; i++) {
+    const { quantity, price, name, image, id, amount } = db.cart[i];
+
+    html += `
       <div class="cart__product">
          <div class="cart__product__img">
             <img src="${image}" alt="imagen" />
@@ -35,7 +34,7 @@ function printProductsInCart(db) {
             <h4>${name} | $${price} </h4>
             <p> Stock: ${quantity}</p>   
             
-            <div class="cart__product__body_op">
+            <div class="cart__product__body_op" id="${id}">
 
               <i class='bx bx-minus'></i>
               <span>${amount} units</span>
@@ -45,12 +44,13 @@ function printProductsInCart(db) {
          </div>
        </div>   
       `;
-      total += amount;
-      carrito = document.getElementById("carrito");
-      carrito.innerHTML = "<h3>" + total.toString() + "</h3>";
-
+    if (db.cart.length === 0 || html.length < 1) total = 0; else total += amount;
+    carrito = document.getElementById("carrito");
+    if (total !== 0) {
+       carrito.innerHTML = "<h3>" + total.toString() + "</h3>";
+    } else carrito.innerHTML = "<h3></h3>";   
   }
-  
+
   cartProducts.innerHTML = html;
 }
 
@@ -92,65 +92,108 @@ function handleShowCart() {
 }
 
 function adiciona(product, cart, id) {
-    
-    let found = 0;
-    let large = cart.length;
-    
-    let tmpArray = [product];
-    
-    for (let i = 0; i <= large - 1; i++) {
-       if (cart[i].id === tmpArray[0].id) {
-          found = 1;
-       }
-    }
+  let found = 0;
+  let large = cart.length;
 
-    if (found === 1) {
+  let tmpArray = [product];
 
-       cart.forEach(element => {
-           if (element.id === id) {
-              if (element.amount === tmpArray[0].quantity) alert("No tenemos más de ese producto en existencia");
-              else element.amount++;
-           }
-          });    
-    }
-
-    if (found === 0) {
-        cart.push(tmpArray[0]);
-        cart[large].amount = 1;
+  for (let i = 0; i <= large - 1; i++) {
+    if (cart[i].id === tmpArray[0].id) {
+      found = 1;
     }
   }
 
+  if (found === 1) {
+    cart.forEach((element) => {
+      if (element.id === id) {
+        if (element.amount === tmpArray[0].quantity)
+          alert("No tenemos más de ese producto en existencia");
+        else element.amount++;
+      }
+    });
+  }
+
+  if (found === 0) {
+    cart.push(tmpArray[0]);
+    cart[large].amount = 1;
+  }
+}
+
 function addToCartFromProducts(db) {
   const productsHTML = document.querySelector(".products");
-  
+
   let mensaje = "";
-    productsHTML.addEventListener("click", function (e) {
+  productsHTML.addEventListener("click", function (e) {
     if (e.target.classList.contains("bx-plus")) {
-      const id = Number(e.target.id); /* es la llave de búsqueda para buscar la info del producto */
+      const id = Number(
+        e.target.id
+      ); /* es la llave de búsqueda para buscar la info del producto */
 
       let productFind = db.products.find((product) => product.id === id);
 
-      mensaje = "Se agrega al carrito: " + JSON.stringify(productFind.name) + JSON.stringify(productFind.description);
+      mensaje =
+        "Se agrega al carrito: " +
+        JSON.stringify(productFind.name) +
+        JSON.stringify(productFind.description);
       alert(mensaje);
 
       /*hay que buscar si el producto ya existía previamente en el carrito */
       /* si ya existe le sumo uno a amount (cantidad), de lo contrario inicializo en 1 */
 
-      
-      adiciona(productFind,db.cart,id);
+      adiciona(productFind, db.cart, id);
       db.cart = db.cart.filter(Boolean);
 
       printProductsInCart(db);
 
-      window.localStorage.setItem("cart", JSON.stringify(db.cart)); 
-
-
-
+      window.localStorage.setItem("cart", JSON.stringify(db.cart));
     }
-  }
-  )};
+  });
+}
 
+/* para la funcionalidad de adicionar, quitar o disminuir articulos desde el carrito */
 
+function addDeleteorDiminish(db) {
+  const cartProducts = document.querySelector(".cart__products");
+  
+  cartProducts.addEventListener("click", function (e) {
+    let theKey = Number(e.target.parentElement.id);
+    if (e.target.classList.contains("bx-plus")) {
+      db.cart.forEach((element) => {
+        if (Number(element.id) === theKey) {
+          if (element.amount === element.quantity)
+            alert("No tenemos más de ese producto en existencia");
+          else element.amount++;
+        }
+      });
+      db.cart = db.cart.filter(item => item.amount !== 0);
+      window.localStorage.setItem("cart", JSON.stringify(db.cart));
+      printProductsInCart(db);
+    }
+    if (e.target.classList.contains("bx-minus")) {
+      db.cart.forEach((element) => {
+        if (Number(element.id) === theKey) {
+          if (element.amount >= 1) element.amount--;
+        }
+      });
+      db.cart = db.cart.filter(item => item.amount !== 0);
+      window.localStorage.setItem("cart", JSON.stringify(db.cart));
+      printProductsInCart(db);
+    }
+    if (e.target.classList.contains("bx-trash")) {
+      db.cart.forEach((element) => {
+        if (Number(element.id) === theKey) {
+          element.amount = 0;
+        }
+      });
+      db.cart = db.cart.filter(item => item.amount !== 0);
+      window.localStorage.setItem("cart", JSON.stringify(db.cart));
+      printProductsInCart(db);
+    }
+  });
+  db.cart = db.cart.filter(item => item.amount !== 0);
+  window.localStorage.setItem("cart", JSON.stringify(db.cart));
+  printProductsInCart(db);
+}
 
 (async () => {
   const db = {
@@ -165,9 +208,9 @@ function addToCartFromProducts(db) {
 
   addToCartFromProducts(db);
 
-   printProductsInCart(db);
-  
+  printProductsInCart(db);
 
+  addDeleteorDiminish(db);
 })();
 
 /* let products = [

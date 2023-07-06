@@ -141,6 +141,10 @@ img {
 
 }
 
+.cart__products i {
+    cursor: pointer;
+}
+
 .cart__product {
 
     box-shadow: var(--general-shadow);
