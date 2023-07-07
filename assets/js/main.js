@@ -44,15 +44,16 @@ function printProductsInCart(db) {
          </div>
        </div>   
       `;
-    if (db.cart.length === 0 || html.length < 1) total = 0; else total += amount;
+    if (db.cart.length === 0 || html.length < 1) total = 0;
+    else total += amount;
     carrito = document.getElementById("carrito");
     if (total !== 0) {
-       carrito.innerHTML = "<h3>" + total.toString() + "</h3>";
-    } else carrito.innerHTML = "<h3></h3>";   
+      carrito.innerHTML = "<h3>" + total.toString() + "</h3>";
+    } else carrito.innerHTML = "<h3></h3>";
   }
 
-  cartProducts.innerHTML = html;
   theTotalizer(db);
+  cartProducts.innerHTML = html;
 }
 
 function printProducts(db) {
@@ -155,7 +156,7 @@ function addToCartFromProducts(db) {
 
 function addDeleteorDiminish(db) {
   const cartProducts = document.querySelector(".cart__products");
-  
+
   cartProducts.addEventListener("click", function (e) {
     let theKey = Number(e.target.parentElement.id);
     if (e.target.classList.contains("bx-plus")) {
@@ -166,7 +167,7 @@ function addDeleteorDiminish(db) {
           else element.amount++;
         }
       });
-      db.cart = db.cart.filter(item => item.amount !== 0);
+      db.cart = db.cart.filter((item) => item.amount !== 0);
       window.localStorage.setItem("cart", JSON.stringify(db.cart));
       printProductsInCart(db);
     }
@@ -176,7 +177,7 @@ function addDeleteorDiminish(db) {
           if (element.amount > 1) element.amount--;
         }
       });
-      db.cart = db.cart.filter(item => item.amount !== 0);
+      db.cart = db.cart.filter((item) => item.amount !== 0);
       window.localStorage.setItem("cart", JSON.stringify(db.cart));
       printProductsInCart(db);
     }
@@ -188,35 +189,63 @@ function addDeleteorDiminish(db) {
           element.amount = 0;
         }
       });
-      db.cart = db.cart.filter(item => item.amount !== 0);
+      db.cart = db.cart.filter((item) => item.amount !== 0);
       window.localStorage.setItem("cart", JSON.stringify(db.cart));
       printProductsInCart(db);
     }
   });
-  db.cart = db.cart.filter(item => item.amount !== 0);
+  db.cart = db.cart.filter((item) => item.amount !== 0);
   window.localStorage.setItem("cart", JSON.stringify(db.cart));
   printProductsInCart(db);
 }
 
 function theTotalizer(db) {
-
-  const infoTotal = document.querySelector("info_total");
-  const infoAmount = document.querySelector("info_amount");
+  const infoTotal = document.getElementById("info__total");
+  const infoAmount = document.getElementById("info__amount");
 
   let totalProducts = 0;
   let totalAmount = 0;
 
   for (const product in db.cart) {
-      
-      const {amount, price} = db.cart[product];
-      
-      totalProducts += price * amount;
-      totalAmount += amount;
+    const { amount, price } = db.cart[product];
 
-      infoTotal.textContent = "$" + totalProducts.toFixed(2);
-      infoAmount.textContent = totalAmount + " units";
+    totalProducts += price * amount;
+    totalAmount += amount;
+
+    infoTotal.textContent = "$" + totalProducts.toFixed(2);
+    infoAmount.textContent = totalAmount + " units";
   }
+}
 
+function theCartCheckOut(db) {
+  const btnBuy = document.querySelector(".btn__buy");
+  btnBuy.addEventListener("click", function () {
+    if (!Object.values(db.cart).length)
+      return alert(
+        "Recuerda adicionar artículos en el carrito para poder efectuar la compra"
+      );
+    const response = confirm("¿Seguro que quieres comprar?");
+    if (!response) return;
+
+    /* voy a iterar y a restar lo que se compró para disminuir la cantidad en products */
+
+   for (const product of db.products) {
+     for (const item of db.cart) {
+         if (product.id === item.id) {
+            product.quantity = product.quantity - item.amount;
+         }
+            
+     }
+    }
+
+
+    db.cart = [];
+
+    window.localStorage.setItem("products", JSON.stringify(db.products));
+    window.localStorage.setItem("cart", JSON.stringify(db.cart));
+    printProductsInCart(db);
+
+  });
 }
 
 (async () => {
@@ -237,6 +266,7 @@ function theTotalizer(db) {
   addDeleteorDiminish(db);
 
   theTotalizer(db);
+  theCartCheckOut(db);
 })();
 
 /* let products = [
