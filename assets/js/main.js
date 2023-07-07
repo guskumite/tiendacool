@@ -101,7 +101,8 @@ function handleShowCart() {
     document.querySelector(
       ".cart"
     ); /* la franja que muestra el carrito de compras */
-  const imageHeader = document.getElementById("ini");  
+  const imageHeader = document.querySelector('.ini');
+  console.log(imageHeader);  
 
   iconCartHTML.addEventListener("click", function () {
     cartHTML.classList.toggle("cart__show");
@@ -268,7 +269,7 @@ function desplazar() {
   window.addEventListener('scroll', function() {
     let nav = document.getElementById('main-nav');
     let headerContent = document.querySelector('.header');
-    let ima = document.getElementById('ini');
+    let ima = document.querySelector('.ini');
     let idx4 = document.getElementById('idx4');
     let idx5 = document.getElementById('idx5');
     let idx6 = document.getElementById('idx6');
@@ -277,7 +278,7 @@ function desplazar() {
     
     if (window.scrollY > 0) {
         nav.classList.add('scrolled');
-        ima.innerHTML = ``;
+        ima.classList.add('hide');
         idx4.innerHTML = '<p></p>';
         idx5.innerHTML = '<p></p>';
         idx6.innerHTML = '<p></p>';
@@ -286,7 +287,7 @@ function desplazar() {
       
     } else {
         nav.classList.remove('scrolled');
-        ima.innerHTML = `<img src="./assets/img/sweater2.png" width="340" height="340">`;
+        ima.classList.remove('hide');
         idx4.innerHTML = `<p id="idx4">New Sweatshirt</p>`;
         idx5.innerHTML = `<p id="idx5">COLLECTIONS 2023</p>`;
         idx6.innerHTML = `<p id="idx6">Latest arrival of the new Hanes Midweight Crewneck sweatshirt</p>`;

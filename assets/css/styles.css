@@ -32,6 +32,7 @@ header {
     top: 0;
     position: fixed;
     z-index: 1000;
+    width: 1024px;
 }
 
 header > #main-nav.scrolled {
@@ -108,7 +109,7 @@ header > #idx4 {
     cursor: pointer;
     position: absolute;
     top: 110px;
-    right: 450px;
+    right: 460px;
     z-index: 2;
     text-align: left;
     width: 350px;
@@ -119,29 +120,29 @@ header > #idx5 {
     cursor: pointer;
     position: absolute;
     top: 150px;
-    right: 450px;
+    right: 460px;
     z-index: 2;
     text-align: left;
     width: 350px;
 }
 
 header > #idx6 {
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
     position: absolute;
     top: 200px;
-    right: 295px;
+    right: 305px;
     z-index: 2;
     text-align: left;
     width: 500px;
 }
 
 header > #idx7 {
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
     position: absolute;
     top: 225px;
-    right: 295px;
+    right: 305px;
     z-index: 2;
     text-align: left;
     width: 500px;
