@@ -62,7 +62,8 @@ function printProducts(db) {
   let html = "";
 
   for (const product of db.products) {
-    html += `
+    if (product.quantity !== 0) {
+      html += `
          <div class="product">
             <div class="product__img">
                <img src="${product.image}" alt="imagen" />
@@ -75,8 +76,21 @@ function printProducts(db) {
              </div>  
          </div>
          `;
+    } else
+      html += `
+  <div class="product">
+     <div class="product__img">
+        <img src="${product.image}" alt="imagen" />
+     </div>
+     <div class="product__info">
+        <h4>${product.name} | <span><b>Stock</b>: ${product.quantity}</h4>   
+        <h5>${product.price}
+        <span class='soldOut'> Sold Out / Agotado </span>
+        </h5>
+      </div>  
+  </div>
+  `;
   }
-
   productsHTML.innerHTML = html;
 }
 
@@ -229,22 +243,22 @@ function theCartCheckOut(db) {
 
     /* voy a iterar y a restar lo que se compró para disminuir la cantidad en products */
 
-   for (const product of db.products) {
-     for (const item of db.cart) {
-         if (product.id === item.id) {
-            product.quantity = product.quantity - item.amount;
-         }
-            
-     }
+    for (const product of db.products) {
+      for (const item of db.cart) {
+        if (product.id === item.id) {
+          product.quantity = product.quantity - item.amount;
+        }
+      }
     }
-
 
     db.cart = [];
 
     window.localStorage.setItem("products", JSON.stringify(db.products));
     window.localStorage.setItem("cart", JSON.stringify(db.cart));
-    printProductsInCart(db);
 
+    theTotalizer(db);
+    printProductsInCart(db);
+    printProducts(db);
   });
 }
 

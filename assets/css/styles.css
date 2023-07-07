@@ -108,6 +108,14 @@ img {
     transform: scale(0.9);
 }
 
+.product__info .soldOut {
+    display: inline-block;
+    color: #fff;
+    background-color: lightcoral;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
 /* ==================================>               Cart */
 
 .cart {
