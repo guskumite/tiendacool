@@ -3,6 +3,11 @@
     --altura-header: 50px;
 }
 
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: grey;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,38 +17,159 @@
 
 body {
     padding: 1rem;
-    background-color: #cccc;
+    background-color: white;
 }
 
 /* ==================================>               Header */
 
 header {
     height: var(--altura-header);
-    background-color: #ffffff;
+    background-color: white;
     position: fixed;
     width: 100%;
     left: 0;
     display: flex;
     top: 0;
+    position: fixed;
+    z-index: 1000;
 }
 
-header > nav {
+header > #main-nav.scrolled {
+    background-color: lightgray;
+}
+
+header > #main-nav {
     max-width: 1024px;
-    background-color: grey;
+    background-color: whitesmoke;
     margin: 0 auto;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: start;
+    align-items: right;
     padding: 0 1rem;
 }
 
-header > nav > i {
-    font-size: 2rem;
+header > #main-nav #carrito {
+    font-size: 1.5rem;
     cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2; 
+}
+
+header > #main-nav #modo {
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    z-index: 2; 
+}
+
+header > #main-nav #idx3 {
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 550px;
+    z-index: 2;
+}
+
+header > #main-nav #idx2 {
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 640px;
+    z-index: 2;
+}
+
+header > #main-nav #idx1 {
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 715px;
+    z-index: 2;
+}
+
+header > #main-nav #idx0 {
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 785px;
+    z-index: 2;
+}
+
+header > #idx4 {
+    font-size: 35px;
+    cursor: pointer;
+    position: absolute;
+    top: 110px;
+    right: 450px;
+    z-index: 2;
+    text-align: left;
+    width: 350px;
+}
+
+header > #idx5 {
+    font-size: 35px;
+    cursor: pointer;
+    position: absolute;
+    top: 150px;
+    right: 450px;
+    z-index: 2;
+    text-align: left;
+    width: 350px;
+}
+
+header > #idx6 {
+    font-size: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 200px;
+    right: 295px;
+    z-index: 2;
+    text-align: left;
+    width: 500px;
+}
+
+header > #idx7 {
+    font-size: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 225px;
+    right: 295px;
+    z-index: 2;
+    text-align: left;
+    width: 500px;
+}
+
+header > #idx8 {
+    font-size: 17px;
+    color: red;
+    cursor: pointer;
+    position: absolute;
+    top: 270px;
+    right: 450px;
+    z-index: 2;
+    text-align: left;
+    width: 350px;
 }
 
 
+header > .inicio {
+    background-color: lightcoral;
+    display: flex;
+    height: 340px;
+    align-items: right;
+}
+
+.header img {
+   z-index: -1;
+}
 img {
     width: 100%;
     display: block;
@@ -59,6 +185,7 @@ img {
     max-width: 1024px;
     margin: 0, auto;
     gap: 1rem;
+    margin-top: 300px;
 }  
 
 .product {

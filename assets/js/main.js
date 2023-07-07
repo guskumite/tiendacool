@@ -262,6 +262,44 @@ function theCartCheckOut(db) {
   });
 }
 
+function desplazar() {
+  window.addEventListener('scroll', function() {
+    let nav = document.getElementById('main-nav');
+    let headerContent = document.querySelector('.header');
+    let ima = document.getElementById('ini');
+    let idx4 = document.getElementById('idx4');
+    let idx5 = document.getElementById('idx5');
+    let idx6 = document.getElementById('idx6');
+    let idx7 = document.getElementById('idx7');
+    let idx8 = document.getElementById('idx8');
+    
+    if (window.scrollY > 0) {
+        nav.classList.add('scrolled');
+        ima.innerHTML = ``;
+        idx4.innerHTML = '<p></p>';
+        idx5.innerHTML = '<p></p>';
+        idx6.innerHTML = '<p></p>';
+        idx7.innerHTML = '<p></p>';
+        idx8.innerHTML = '<p></p>';
+      
+    } else {
+        nav.classList.remove('scrolled');
+        ima.innerHTML = `<img src="./assets/img/sweater2.png" width="340" height="340">`;
+        idx4.innerHTML = `<p id="idx4">New Sweatshirt</p>`;
+        idx5.innerHTML = `<p id="idx5">COLLECTIONS 2023</p>`;
+        idx6.innerHTML = `<p id="idx6">Latest arrival of the new Hanes Midweight Crewneck sweatshirt</p>`;
+        idx7.innerHTML = `<p id="idx7">imported from the 2023 series, with a modern design.</p>`; 
+        idx8.innerHTML = `<p id="idx8">$14.00</p>`;
+        
+        
+        
+
+      }
+});
+
+}
+
+
 (async () => {
   const db = {
     products:
@@ -270,6 +308,7 @@ function theCartCheckOut(db) {
     cart: JSON.parse(window.localStorage.getItem("cart")) || [],
   };
 
+  desplazar();
   printProducts(db);
   handleShowCart();
 
