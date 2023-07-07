@@ -101,9 +101,11 @@ function handleShowCart() {
     document.querySelector(
       ".cart"
     ); /* la franja que muestra el carrito de compras */
+  const imageHeader = document.getElementById("ini");  
 
   iconCartHTML.addEventListener("click", function () {
     cartHTML.classList.toggle("cart__show");
+    imageHeader.classList.toggle("hide");
   });
 }
 
