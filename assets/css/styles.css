@@ -477,6 +477,10 @@ img {
     min-height: 54px;
 }
 
+.product__info h4:hover {
+    transform: scale(0.9);
+}
+
 .product__info span {
     font-weight: normal;
     font-size: 0.8rem;
