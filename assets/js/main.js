@@ -70,7 +70,7 @@ function printProducts(db, dbfilter) {
                 <img src="${product.image}" alt="imagen" />
              </div>
              <div class="product__info">
-                 <h4>${product.name} | <span><b>Stock</b>: ${product.quantity}</h4>   
+                 <h4 class="producto" id="${product.id}">${product.name} | <span><b>Stock</b>: ${product.quantity}</h4>   
                  <h5>${product.price}
                     <i class='bx bx-plus' id='${product.id}'></i>
                  </h5>
@@ -84,7 +84,7 @@ function printProducts(db, dbfilter) {
                    <img src="${product.image}" alt="imagen" />
                 </div>
                 <div class="product__info">
-                   <h4>${product.name} | <span><b>Stock</b>: ${product.quantity}</h4>   
+                   <h4 class="producto" id="${product.id}">${product.name} | <span><b>Stock</b>: ${product.quantity}</h4>   
                    <h5>${product.price}
                       <span class='soldOut'> Sold Out / Agotado </span>
                    </h5>
@@ -100,7 +100,7 @@ function printProducts(db, dbfilter) {
               <img src="${product.image}" alt="imagen" />
            </div>
            <div class="product__info">
-               <h4>${product.name} | <span><b>Stock</b>: ${product.quantity}</h4>   
+               <h4 class="producto" id="${product.id}">${product.name} | <span><b>Stock</b>: ${product.quantity}</h4>   
                <h5>${product.price}
                   <i class='bx bx-plus' id='${product.id}'></i>
                </h5>
@@ -114,7 +114,7 @@ function printProducts(db, dbfilter) {
                  <img src="${product.image}" alt="imagen" />
               </div>
               <div class="product__info">
-                 <h4>${product.name} | <span><b>Stock</b>: ${product.quantity}</h4>   
+                 <h4 class="producto" id="${product.id}">${product.name} | <span><b>Stock</b>: ${product.quantity}</h4>   
                  <h5>${product.price}
                     <span class='soldOut'> Sold Out / Agotado </span>
                  </h5>
@@ -134,12 +134,12 @@ function handleShowCart() {
     document.querySelector(
       ".cart"
     ); /* la franja que muestra el carrito de compras */
-  const imageHeader = document.querySelector('.ini');
-  console.log(imageHeader);  
+  const imageHeader = document.querySelector('.ini'); 
 
   iconCartHTML.addEventListener("click", function () {
     cartHTML.classList.toggle("cart__show");
-    imageHeader.classList.toggle("hide");
+    if (oculto === 0)
+       imageHeader.classList.toggle("hide");
   });
 }
 
@@ -317,6 +317,7 @@ function desplazar() {
     if (window.scrollY > 0) {
         nav.classList.add('scrolled');
         ima.classList.add('hide');
+        oculto = 1;
         bot.classList.add('hide');
         fltA.classList.add('hide');
         fltB.classList.add('hide');
@@ -331,6 +332,7 @@ function desplazar() {
     } else {
         nav.classList.remove('scrolled');
         ima.classList.remove('hide');
+        oculto = 0;
         bot.classList.remove('hide');
         fltA.classList.remove('hide');
         fltB.classList.remove('hide');
@@ -386,6 +388,14 @@ function Statistics(db) {
       HTMLfltD.innerHTML = htmlfilterD;
 }
 
+function infoProducto(id, productos) {
+    for (producto of productos) {
+       if (producto.id === Number(id)) {
+          return alert(producto.name + ". "+ producto.description); 
+       }
+    }
+}
+
 (async () => {
   const db = {
     products:
@@ -395,6 +405,7 @@ function Statistics(db) {
   };
 
   let productFilter = "all";
+  let oculto = 0;
 
   desplazar();
   printProducts(db,productFilter);
@@ -410,18 +421,24 @@ function Statistics(db) {
   theCartCheckOut(db);
   Statistics(db);
 
-  btnfltA = document.querySelector('.filterA');
+  let btnfltA = document.querySelector('.filterA');
   btnfltA.addEventListener("click", function () { productFilter = "all"; printProducts(db,productFilter) });
-  btnfltB = document.querySelector('.filterB');
+  let btnfltB = document.querySelector('.filterB');
   btnfltB.addEventListener("click", function () { productFilter = "shirt"; printProducts(db,productFilter) });
-  btnfltC = document.querySelector('.filterC');
+  let btnfltC = document.querySelector('.filterC');
   btnfltC.addEventListener("click", function () { productFilter = "hoddie"; printProducts(db,productFilter) });
-  btnfltD = document.querySelector('.filterD');
+  let btnfltD = document.querySelector('.filterD');
   btnfltD.addEventListener("click", function () { productFilter = "sweater"; printProducts(db,productFilter) });
 
   btnmodo = document.getElementById('modo');
   btnmodo.addEventListener("click", function () { HTML1 = document.querySelector('body'); HTML1.classList.toggle('dark_mode'); });
 
+  const donde = document.querySelector(".products");
+
+  donde.addEventListener("click", function (e) {
+    if (e.target.classList.contains("producto")) { infoProducto(e.target.id, db.products); }});
+
+  
   
 })();
 
