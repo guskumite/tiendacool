@@ -1,6 +1,13 @@
 :root {
     --general-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
     --altura-header: 50px;
+    --color-back-dark: black;
+    --color-back-light: white;
+}
+
+.dark_mode {
+    background-color: var(--color-back-dark);
+    color: var(--color-back-light);
 }
 
 a:link, a:visited, a:active {
@@ -160,6 +167,89 @@ header > #idx8 {
     width: 350px;
 }
 
+header > .more {
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 300px;
+    right: 650px;
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+
+header > .filterA {
+    font-size: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 380px;
+    right: 760px;
+    width: 140px;
+    height: 60px;
+    background-color: black;
+    color: white;
+}
+
+header > .filterA:hover {
+     background-color: grey;
+     transform: scale(0.9);
+}
+
+header > .filterB:hover {
+    background-color: grey;
+    transform: scale(0.9);
+}
+
+header > .filterC:hover {
+    background-color: grey;
+    transform: scale(0.9);
+}
+
+header > .filterD:hover {
+    background-color: grey;
+    transform: scale(0.9);
+}
+
+
+
+header > .filterB {
+    font-size: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 380px;
+    right: 615px;
+    width: 140px;
+    height: 60px;
+    background-color: black;
+    color: white;
+}
+
+header > .filterC {
+    font-size: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 380px;
+    right: 470px;
+    width: 140px;
+    height: 60px;
+    background-color: black;
+    color: white;
+}
+
+header > .filterD {
+    font-size: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 380px;
+    right: 325px;
+    width: 140px;
+    height: 60px;
+    background-color: black;
+    color: white;
+}
+
+
 .hide {
     display: none;
 }
@@ -182,18 +272,188 @@ img {
     display: block;
 }  
 
+.footer1 {
+    position: absolute;
+    top: 2540px;
+    background-color: lightgray;
+    height: 50vh;
+    width: 1024px;
+}
+
+.footer1 > #ftr0 {
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    width: 200px;
+    top: 100px;
+}
+
+.footer1 > #ftr1 {
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    top: 77px;
+    left: 250px;
+}
+
+.footer1 > #ftr2 {
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    top: 55px;
+    left: 530px;
+}
+
+.footer1 > #ftr3 {
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    top: 30px;
+    left: 740px;
+}
+
+.footer1 > #ftr4 {
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    top: 60px;
+    left: 20px;
+}
+
+.footer1 > #ftr5 {
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    top: 44px;
+    left: 250px;
+}
+
+.footer1 > #ftr6 {
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    top: 26px;
+    left: 530px;
+}
+
+.footer1 > #ftr7 {
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    top: 5px;
+    left: 740px;
+}
+
+.footer1 > #ftr8 {
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    top: 5px;
+    left: 740px;
+}
+
+.footer1 > #ftr9 {
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    top: 5px;
+    left: 740px;
+}
+
+.footer1 > #ftrA {
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    top: 14px;
+    left: 250px;
+}
+
+.footer1 > #ftrB {
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    top: -5px;
+    left: 530px;
+}
+
+.footer1 > #ftrC {
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    top: 14px;
+    left: 250px;
+}
+
+.footer1 > #ftrD {
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    top: -5px;
+    left: 530px;
+}
+
+.footer1 > #ftrE {
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    top: 14px;
+    left: 250px;
+}
+
+.footer1 > #ftrF {
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    top: -5px;
+    left: 530px;
+}
+
+.footer1 > #ftr10 {
+    background-color: lightsalmon;
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+    width: 1024px;
+    top: 30px;
+    left: 0px;
+    height: 100px;
+    text-align: center;
+    align-items: center;
+}
+
 
 /* ==================================>               Products */
 
 .products {
     padding-top: 3rem;
     display: grid;
+    position: relative;
     grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
     max-width: 1024px;
     margin: 0, auto;
     gap: 1rem;
-    margin-top: 300px;
-}  
+    margin-top: 450px;
+    margin-bottom: 100px;
+}
 
 .product {
     border-radius: 1rem;
