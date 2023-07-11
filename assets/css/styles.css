@@ -36,9 +36,10 @@ header {
     width: 100%;
     left: 0;
     display: flex;
+    flex-direction: row;
     top: 0;
     z-index: 1000;
-    width: 1024px;
+    width: 100%;
 }
 
 header > #main-nav.scrolled {
@@ -269,19 +270,19 @@ img {
     justify-content: space-between;
 }
 
-.footer1 .subfooterA > .ftr0 {
+.footer1 .subfooterA #ftr0 {
     font-weight: bold;
 }
 
-.footer1 .subfooterB > .ftr1 {
+.footer1 .subfooterB #ftr1 {
     font-weight: bold;
 }
 
-.footer1 .subfooterC > .ftr2 {
+.footer1 .subfooterC #ftr2 {
     font-weight: bold;
 }
 
-.footer1 .subfooterD > .ftr3 {
+.footer1 .subfooterD #ftr3 {
     font-weight: bold;
 }
 
@@ -488,15 +489,6 @@ img {
 
 @media (min-width: 300px) && (max-width: 444px) {
 
-header > #main-nav #carrito {
-    right: 270px;
-}
-
-header > #main-nav #modo {
-    right: 300px;
-    z-index: 2; 
-}
-
 .footer1 {
     font-size: 12px;
     top: 6000px;
@@ -515,14 +507,6 @@ header > #main-nav #modo {
 .footer2 > #ftr10 p {
     font-size: 0.5rem;
 }
-
-header {
-    width: 300px;
-}
-
-header > #main-nav {
-    width: 300px;
-}  
 
 header > #main-nav #idx3 {
     font-size: 0.7rem;
@@ -619,15 +603,6 @@ header > .filterD {
         width: 100%;
     }
 
-    header > #main-nav #carrito {
-        right: 500px;
-    }
-    
-    header > #main-nav #modo {
-        right: 530px;
-        z-index: 2; 
-    }    
-
     .footer2 {
         font-size: 12px;
         top: 5000px;
@@ -642,15 +617,7 @@ header > .filterD {
     .footer2 > #ftr10 p {
         font-size: 0.5rem;
     }
-        
-    header {
-        width: 1024px;
-    }
-
-    header > #main-nav {
-        width: 1024px;
-    }  
-    
+            
     header > #main-nav #idx3 {
         font-size: 0.7rem;
         left: 130px;
