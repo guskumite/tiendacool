@@ -307,10 +307,10 @@ img {
     font-size: 16px;
     position: fixed;
     display: center;
-    top: 150px;
+    top: 120px;
     left: 100px;
     width: 350px;
-    min-height: 100px;
+    max-height: 80px;
 }
 
 .product__img {
