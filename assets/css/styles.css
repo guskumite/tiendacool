@@ -638,6 +638,11 @@ header > #main-nav #modo {
     width: 100%;
 }
 
+.footer1 > #ftr1 {
+    top: 200px;
+    left: 10px;
+}
+
 .footer1 > #ftr10 {
     top: 350px;
     width: 300px;
@@ -809,6 +814,11 @@ header > .filterD {
         width: 500px;
         top: 5000px;
     }
+
+    .footer1 > #ftr1 {
+        top: 200px;
+        left: 10px;
+    }    
 
     .footer1 > #ftr10 {
         top: 350px;
