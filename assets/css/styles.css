@@ -426,10 +426,9 @@ img {
 
 .footer1 > #ftr10 {
     background-color: lightsalmon;
-    font-size: 25px;
+    font-size: 20px;
     cursor: pointer;
     position: relative;
-    width: 100%;
     top: 30px;
     left: 0px;
     height: 100px;
