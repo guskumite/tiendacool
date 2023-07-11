@@ -629,6 +629,11 @@ header > #main-nav #modo {
     z-index: 2; 
 }
 
+.footer1 {
+    width: 300px;
+    top: 6000px;
+}
+
 .cart {
     width: 100%;
 }
@@ -793,6 +798,11 @@ header > .filterD {
         right: 530px;
         z-index: 2; 
     }    
+
+    .footer1 {
+        width: 500px;
+        top: 5000px;
+    }
 
     .footer1 > #ftr10 {
         top: 350px;
