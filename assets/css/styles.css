@@ -630,6 +630,7 @@ header > #main-nav #modo {
 }
 
 .footer1 {
+    font-size: 12px;
     width: 300px;
     top: 6000px;
 }
@@ -800,6 +801,7 @@ header > .filterD {
     }    
 
     .footer1 {
+        font-size: 12px;
         width: 500px;
         top: 5000px;
     }
