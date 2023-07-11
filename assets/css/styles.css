@@ -41,6 +41,31 @@ header {
     z-index: 1000;
 }
 
+header > .subheader {
+    max-width: 700px;
+    max-height: 500px;
+}
+
+header > .subheader #idx4 {
+    font-size: 20px;
+}
+
+header > .subheader #idx5 {
+    font-size: 20px;
+}
+
+header > .subheader #idx6 {
+    font-size: 20px;
+}
+
+header > .subheader #idx7 {
+    font-size: 20px;
+}
+
+header > .subheader #idx8 {
+    font-size: 20px;
+}
+
 header > #main-nav.scrolled {
     background-color: lightgray;
 }
