@@ -25,6 +25,7 @@ a:link, a:visited, a:active {
 body {
     padding: 1rem;
     background-color: white;
+    display: flex;
 }
 
 /* ==================================>               Header */
@@ -270,11 +271,11 @@ img {
 }  
 
 .footer1 {
-    position: absolute;
-    top: 2540px;
     background-color: lightgray;
     height: 50vh;
-    width: 1024px;
+    width: 100%;
+    padding: 1em;
+    align-self: flex-end;
 }
 
 .footer1 > #ftr0 {
@@ -619,12 +620,6 @@ img {
 }
 
 @media (min-width: 300px) && (max-width: 444px) {
-    .footer1 { 
-        position: absolute;
-        bottom: 0;
-        height: 2.5rem;
-        min-height: 100%;
-}
 
 header > #main-nav #carrito {
     right: 300px;
@@ -800,13 +795,6 @@ header > .filterD {
         z-index: 2; 
     }    
 
-    .footer1 {
-        width: 1024px;
-        position: absolute;
-        bottom: 0px;
-        height: 2.5rem;
-        min-height: 100%;
-    }
     .footer1 > #ftr10 {
         top: 350px;
         width: 400px;
