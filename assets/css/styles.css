@@ -314,9 +314,10 @@ img {
 }
 
 .auxiliar > .cerrar {
-    font-size: 18px;
+    font-size: 25px;
     color: red;
-    position: relative;
+    background-color: black;
+    position: absolute;
     top: 0px;
     right: 0px;
 }
