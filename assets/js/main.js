@@ -407,7 +407,7 @@ function infoProducto(id, productos, kart, db) {
                     <i class='bx bx-plus' id='${producto.id}'></i>
                  </h5>
              </div>
-             <button class="cerrar">Cerrar </button>  
+             <button class="cerrar">X</button>  
              </div>
          `;
        } else
