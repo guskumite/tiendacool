@@ -314,6 +314,14 @@ img {
     align-items: top;
 }
 
+.auxiliar > .product .product__img {
+    background-color: lightgray;
+}
+
+.auxiliar > .product .product__info {
+    background-color: lightgray;
+}
+
 .auxiliar > .close {
     background-color: black;
     position: absolute;
