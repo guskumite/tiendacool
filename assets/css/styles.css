@@ -546,6 +546,10 @@ header > #main-nav #idx0 {
     
 }
 
+header > .subheader {
+    max-width: 300px;
+}
+
 header > .more {
     left: 10px;
     top: 190px;
@@ -619,6 +623,10 @@ header > .filterD {
         
     }
 
+    header > .subheader {
+        max-width: 300px;
+    }
+    
     header > .more {
         left: 10px;
         top: 190px;
