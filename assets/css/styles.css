@@ -310,6 +310,9 @@ img {
     left: 100px;
     width: 350px;
     max-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .auxiliar > .close {
