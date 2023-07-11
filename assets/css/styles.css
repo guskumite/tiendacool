@@ -44,26 +44,30 @@ header {
 header > .subheader {
     max-width: 700px;
     max-height: 500px;
+    position: absolute;
+    top: 20px;
+    left: 10px;
 }
 
 header > .subheader #idx4 {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 header > .subheader #idx5 {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 header > .subheader #idx6 {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 header > .subheader #idx7 {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 header > .subheader #idx8 {
-    font-size: 20px;
+    color: red;
+    font-size: 25px;
 }
 
 header > #main-nav.scrolled {
