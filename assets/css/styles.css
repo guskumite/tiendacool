@@ -640,11 +640,15 @@ header > #main-nav #modo {
 }
 
 .footer1 > #ftr10 {
-    font-size: 0.5rem;
     top: 350px;
     width: 300px;
     height: 200px;
 }
+
+.footer1 > #ftr10 p {
+    font-size: 0.5rem;
+}
+
 .footer1 > #ftr2 {
     top: 250px; 
     left: 10px;
@@ -812,6 +816,11 @@ header > .filterD {
         width: 400px;
         height: 200px;
     }
+
+    .footer1 > #ftr10 p {
+        font-size: 0.5rem;
+    }
+        
     .footer1 > #ftr2 {
         top: 250px; 
         left: 10px;
