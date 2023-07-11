@@ -396,7 +396,10 @@ function infoProducto(id, productos, kart, db) {
        if (producto.id === Number(id)) {
           if (producto.quantity !== 0) {
           html += `
-             <div class="product">
+            <div class="close">
+                <button class="cerrar">X</button>
+            </div>     
+            <div class="product">
              <div class="product__img">
                 <img src="${producto.image}" width="100" height="150" alt="imagen" />
              </div>
@@ -407,13 +410,13 @@ function infoProducto(id, productos, kart, db) {
                     <i class='bx bx-plus' id='${producto.id}'></i>
                  </h5>
              </div>
-             <div class="close">
-                <button class="cerrar">X</button>
-             </div>     
              </div>
          `;
        } else
           html += `
+             <div class="close">
+                <button class="cerrar">X</button>
+             </div>       
              <div class="product">
                 <div class="product__img">
                    <img src="${producto.image}"  width="100" height="150" alt="imagen" />
@@ -425,9 +428,6 @@ function infoProducto(id, productos, kart, db) {
                       <span class='soldOut'> Sold Out / Agotado </span>
                    </h5>
                 </div> 
-                <div class="close">
-                   <button class="cerrar">X</button>
-                </div>       
               </div>
   `;          
  
