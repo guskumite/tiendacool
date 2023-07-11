@@ -85,7 +85,7 @@ header > #main-nav #idx2 {
     font-size: 1.2rem;
     cursor: pointer;
     position: absolute;
-    left: 200px;
+    left: 170px;
     z-index: 2;
 }
 
@@ -179,7 +179,7 @@ header > .filterA {
     position: absolute;
     top: 380px;
     left: 50px;
-    width: 140px;
+    width: 25%;
     height: 60px;
     background-color: black;
     color: white;
@@ -191,7 +191,7 @@ header > .filterB {
     position: absolute;
     top: 380px;
     left: 200px;
-    width: 140px;
+    width: 25%;
     height: 60px;
     background-color: black;
     color: white;
@@ -203,7 +203,7 @@ header > .filterC {
     position: absolute;
     top: 380px;
     left: 350px;
-    width: 140px;
+    width: 25%;
     height: 60px;
     background-color: black;
     color: white;
@@ -215,7 +215,7 @@ header > .filterD {
     position: absolute;
     top: 380px;
     left: 500px;
-    width: 140px;
+    width: 25%;
     height: 60px;
     background-color: black;
     color: white;
@@ -575,28 +575,24 @@ header > .more {
 
 header > .filterA {
     font-size: 0.5rem;
-    width: 80px;;
     left: 10px;
     top: 360px;
 }
 
 header > .filterB {
     font-size: 0.5rem;
-    width: 80px;
     left: 120px;
     top: 360px;
 }
 
 header > .filterC {
     font-size: 0.5rem;
-    width: 80px;
     left: 230px;
     top: 360px;
 }
 
 header > .filterD {
     font-size: 0.5rem;
-    width: 80px;
     left: 300px;
     top: 360px;
 }
@@ -685,28 +681,24 @@ header > .filterD {
     
     header > .filterA {
         font-size: 0.7rem;
-        width: 100px;;
         left: 10px;
         top: 360px;
     }
 
     header > .filterB {
         font-size: 0.7rem;
-        width: 100px;
         left: 120px;
         top: 360px;
     }
 
     header > .filterC {
         font-size: 0.7rem;
-        width: 100px;
         left: 230px;
         top: 360px;
     }
 
     header > .filterD {
         font-size: 0.7rem;
-        width: 100px;
         left: 340px;
         top: 360px;
     }
