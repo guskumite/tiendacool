@@ -317,7 +317,7 @@ img {
     font-size: 25px;
     color: red;
     background-color: black;
-    position: absolute;
+    position: fixed;
     top: 0px;
     right: 0px;
 }
