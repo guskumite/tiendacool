@@ -25,7 +25,6 @@ a:link, a:visited, a:active {
 body {
     padding: 1rem;
     background-color: white;
-    display: flex;
 }
 
 /* ==================================>               Header */
@@ -275,7 +274,8 @@ img {
     height: 50vh;
     width: 100%;
     padding: 1em;
-    align-self: flex-end;
+    position: absolute;
+    top: 5000px;
 }
 
 .footer1 > #ftr0 {
