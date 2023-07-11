@@ -429,7 +429,7 @@ img {
     font-size: 25px;
     cursor: pointer;
     position: relative;
-    width: 1024px;
+    width: 100%;
     top: 30px;
     left: 0px;
     height: 100px;
