@@ -388,12 +388,86 @@ function Statistics(db) {
       HTMLfltD.innerHTML = htmlfilterD;
 }
 
-function infoProducto(id, productos) {
+function infoProducto(id, productos, kart, db) {
+    
+    modalHTML = document.querySelector(".auxiliar");
+    html = "";
     for (producto of productos) {
        if (producto.id === Number(id)) {
-          return alert(producto.name + ". "+ producto.description); 
+          if (producto.quantity !== 0) {
+          html += `
+             <div class="product">
+             <div class="product__img">
+                <img src="${producto.image}" width="100" height="150" alt="imagen" />
+             </div>
+             <div class="product__info">
+                 <h4 class="descripcion">${producto.description} </h4>
+                 <h4 class="producto" id="${producto.id}">${producto.name} | <span><b>Stock</b>: ${producto.quantity}</h4>   
+                 <h5>${producto.price}
+                    <i class='bx bx-plus' id='${producto.id}'></i>
+                 </h5>
+             </div>
+             <button class="cerrar">Cerrar </button>  
+             </div>
+         `;
+       } else
+          html += `
+             <div class="product">
+                <div class="product__img">
+                   <img src="${producto.image}"  width="100" height="150" alt="imagen" />
+                </div>
+                <div class="product__info">
+                   <h4 class="descripcion">${producto.description} </h4>
+                   <h4 class="producto" id="${producto.id}">${producto.name} | <span><b>Stock</b>: ${producto.quantity}</h4>   
+                   <h5>${producto.price}
+                      <span class='soldOut'> Sold Out / Agotado </span>
+                   </h5>
+                </div> 
+                <button class="cerrar">Cerrar </button>  
+              </div>
+  `;          
+ 
        }
     }
+    modalHTML.innerHTML = html;
+    /*botón para cerrar ventana modal */
+    html = "";
+    cerrar = document.querySelector(".cerrar");
+    cerrar.addEventListener("click", function (e) {
+       html += ``; modalHTML.innerHTML = html;
+    });
+    
+    /* la lógica de agregar al carrito desde el modal */
+
+    let mensaje = "";
+    modalHTML.addEventListener("click", function (e) {
+      if (e.target.classList.contains("bx-plus")) {
+        const id = Number(
+          e.target.id
+        ); /* es la llave de búsqueda para buscar la info del producto */
+  
+        let productFind = productos.find((product) => product.id === id);
+  
+        mensaje =
+          "Se agrega al carrito: " +
+          JSON.stringify(productFind.name) +
+          JSON.stringify(productFind.description);
+        alert(mensaje);
+  
+        /*hay que buscar si el producto ya existía previamente en el carrito */
+        /* si ya existe le sumo uno a amount (cantidad), de lo contrario inicializo en 1 */
+  
+        adiciona(productFind, kart, id);
+        kart = kart.filter(Boolean);
+  
+        printProductsInCart(db);
+  
+        window.localStorage.setItem("cart", JSON.stringify(kart));
+
+      }
+    });  
+  
+
 }
 
 (async () => {
@@ -436,7 +510,7 @@ function infoProducto(id, productos) {
   const donde = document.querySelector(".products");
 
   donde.addEventListener("click", function (e) {
-    if (e.target.classList.contains("producto")) { infoProducto(e.target.id, db.products); }});
+    if (e.target.classList.contains("producto")) { infoProducto(e.target.id, db.products, db.cart, db); }});
 
   
   
