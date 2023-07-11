@@ -619,9 +619,8 @@ img {
 
 @media (min-width: 300px) && (max-width: 444px) {
     .footer1 { 
-        position: absolute;
+        position: static;
         height: 2.5rem;
-        bottom: 0;
         min-height: 100%;
 }
 
@@ -801,9 +800,8 @@ header > .filterD {
 
     .footer1 {
         width: 1024px;
-        position: absolute;
+        position: static;
         height: 2.5rem;
-        bottom: 0;
         min-height: 100%;
     }
     .footer1 > #ftr10 {
