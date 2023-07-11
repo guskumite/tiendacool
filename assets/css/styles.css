@@ -306,7 +306,6 @@ img {
 .auxiliar {
     font-size: 16px;
     position: fixed;
-    display: center;
     top: 120px;
     left: 100px;
     width: 350px;
@@ -316,15 +315,17 @@ img {
 .auxiliar > .close {
     background-color: black;
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
 }
 
 .auxiliar > .close .cerrar {
     font-size: 30px;
     color: red;
     background-color: black;
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .product__img {
