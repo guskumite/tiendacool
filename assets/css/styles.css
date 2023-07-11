@@ -512,6 +512,11 @@ img {
 
 header > .subheader {
     width: 300px;
+    max-width: 100%;
+}
+
+header > .subheader > p {
+    max-width: 100%;
 }
 
 .cart {
@@ -603,6 +608,11 @@ header > .filterD {
 
     header > .subheader {
         width: 300px;
+        max-width: 100%;
+    }
+
+    header > .subheader > p {
+        max-width: 100%;
     }
             
     header > #main-nav #idx3 {
