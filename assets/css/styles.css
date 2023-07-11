@@ -106,7 +106,7 @@ header > #main-nav #idx0 {
 
 header > .subheader {
     position: fixed;
-    max-width: 700px;
+    width: 700px;
     height: 600px;
     left: 0;
     display: flex;
