@@ -619,7 +619,7 @@ img {
     cursor: pointer;
 }
 
-@media (min-width: 300px) {
+@media (min-width: 300px) && (max-width: 444px) {
     .footer1 { 
     position: static;
     max-width: 300px;
@@ -776,7 +776,7 @@ header > .filterD {
 }
 
 }
-@media (max-width: 500px) {
+@media (min-width: 500px) && (max-width: 1024px) {
     .cart {
         width: 100%;
     }
