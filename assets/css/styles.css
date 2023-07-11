@@ -174,48 +174,48 @@ header > .more {
 }
 
 header > .filterA {
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
     position: absolute;
     top: 380px;
     left: 50px;
-    width: 25%;
+    width: 80px;
     height: 60px;
     background-color: black;
     color: white;
 }
 
 header > .filterB {
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
     position: absolute;
     top: 380px;
     left: 200px;
-    width: 25%;
+    width: 80px;
     height: 60px;
     background-color: black;
     color: white;
 }
 
 header > .filterC {
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
     position: absolute;
     top: 380px;
     left: 350px;
-    width: 25%;
+    width: 80px;
     height: 60px;
     background-color: black;
     color: white;
 }
 
 header > .filterD {
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
     position: absolute;
     top: 380px;
     left: 500px;
-    width: 25%;
+    width: 80px;
     height: 60px;
     background-color: black;
     color: white;
