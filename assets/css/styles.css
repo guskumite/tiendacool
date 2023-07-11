@@ -619,10 +619,10 @@ img {
 
 @media (min-width: 300px) && (max-width: 444px) {
     .footer1 { 
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    max-width: 300px;
+        position: absolute;
+        height: 2.5rem;
+        bottom: 0;
+        min-height: 100%;
 }
 
 header > #main-nav #carrito {
@@ -802,9 +802,9 @@ header > .filterD {
     .footer1 {
         width: 1024px;
         position: absolute;
-        left: 0;
+        height: 2.5rem;
         bottom: 0;
-        height: 500px;
+        min-height: 100%;
     }
     .footer1 > #ftr10 {
         top: 350px;
