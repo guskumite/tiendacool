@@ -279,7 +279,19 @@ img {
     flex-direction: row;
 }
 
-.footer1 > #ftr10 {
+.footer1 :nth-child(0) {
+    font-weight: bold;
+}
+
+.footer2 {
+    background-color: lightsalmon;
+    width: 100%;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+}
+
+.footer2 > #ftr10 {
     background-color: lightsalmon;
     font-size: 20px;
     cursor: pointer;
@@ -492,13 +504,13 @@ header > #main-nav #modo {
     width: 100%;
 }
 
-.footer1 > #ftr10 {
+.footer2 > #ftr10 {
     top: 350px;
     width: 300px;
     height: 200px;
 }
 
-.footer1 > #ftr10 p {
+.footer2 > #ftr10 p {
     font-size: 0.5rem;
 }
 
@@ -614,18 +626,18 @@ header > .filterD {
         z-index: 2; 
     }    
 
-    .footer1 {
+    .footer2 {
         font-size: 12px;
         top: 5000px;
     }
 
-    .footer1 > #ftr10 {
+    .footer2 > #ftr10 {
         top: 350px;
         width: 400px;
         height: 200px;
     }
 
-    .footer1 > #ftr10 p {
+    .footer2 > #ftr10 p {
         font-size: 0.5rem;
     }
         
