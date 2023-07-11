@@ -210,8 +210,6 @@ header > .filterD:hover {
     transform: scale(0.9);
 }
 
-
-
 header > .filterB {
     font-size: 15px;
     cursor: pointer;
@@ -625,6 +623,15 @@ img {
     max-width: 300px;
 }
 
+header > #main-nav #carrito {
+    right: 300px;
+}
+
+header > #main-nav #modo {
+    right: 330px;
+    z-index: 2; 
+}
+
 .cart {
     width: 100%;
 }
@@ -780,8 +787,18 @@ header > .filterD {
     .cart {
         width: 100%;
     }
+
+    header > #main-nav #carrito {
+        right: 500px;
+    }
+    
+    header > #main-nav #modo {
+        right: 530px;
+        z-index: 2; 
+    }    
+
     .footer1 {
-        width: 500px;
+        width: 1024px;
         top: 4000px;
         height: 500px;
     }
@@ -835,11 +852,11 @@ header > .filterD {
     }
 
     header {
-        width: 450px;
+        width: 1024px;
     }
 
     header > #main-nav {
-        width: 450px;
+        width: 1024px;
     }  
     
     header > #main-nav #idx3 {
