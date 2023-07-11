@@ -277,151 +277,24 @@ img {
     bottom: 0;
 }
 
-.footer1 > #ftr0 {
-    font-weight: bold;
-    font-size: 20px;
-    cursor: pointer;
-    position: relative;
-    width: 200px;
-    top: 100px;
+.footer1 > .subfooterA {
+    top: 10px;
+    left 10px;
 }
 
-.footer1 > #ftr1 {
-    font-weight: bold;
-    font-size: 20px;
-    cursor: pointer;
-    position: relative;
-    width: 150px;
-    top: 77px;
-    left: 250px;
+.footer1 > .subfooterB {
+    top: 10px;
+    left: 200px;
 }
 
-.footer1 > #ftr2 {
-    font-weight: bold;
-    font-size: 20px;
-    cursor: pointer;
-    position: relative;
-    width: 150px;
-    top: 55px;
-    left: 530px;
+.footer1 > .subfooterC {
+    top: 10px;
+    left: 400px;
 }
 
-.footer1 > #ftr3 {
-    font-weight: bold;
-    font-size: 20px;
-    cursor: pointer;
-    position: relative;
-    width: 150px;
-    top: 30px;
-    left: 740px;
-}
-
-.footer1 > #ftr4 {
-    font-size: 15px;
-    cursor: pointer;
-    position: relative;
-    width: 150px;
-    top: 60px;
-    left: 20px;
-}
-
-.footer1 > #ftr5 {
-    font-size: 15px;
-    cursor: pointer;
-    position: relative;
-    width: 150px;
-    top: 44px;
-    left: 250px;
-}
-
-.footer1 > #ftr6 {
-    font-size: 15px;
-    cursor: pointer;
-    position: relative;
-    width: 150px;
-    top: 26px;
-    left: 530px;
-}
-
-.footer1 > #ftr7 {
-    font-size: 25px;
-    cursor: pointer;
-    position: relative;
-    width: 30px;
-    top: 5px;
-    left: 740px;
-}
-
-.footer1 > #ftr8 {
-    font-size: 25px;
-    cursor: pointer;
-    position: relative;
-    width: 30px;
-    top: 5px;
-    left: 740px;
-}
-
-.footer1 > #ftr9 {
-    font-size: 25px;
-    cursor: pointer;
-    position: relative;
-    width: 30px;
-    top: 5px;
-    left: 740px;
-}
-
-.footer1 > #ftrA {
-    font-size: 15px;
-    cursor: pointer;
-    position: relative;
-    width: 150px;
-    top: 14px;
-    left: 250px;
-}
-
-.footer1 > #ftrB {
-    font-size: 15px;
-    cursor: pointer;
-    position: relative;
-    width: 150px;
-    top: -5px;
-    left: 530px;
-}
-
-.footer1 > #ftrC {
-    font-size: 15px;
-    cursor: pointer;
-    position: relative;
-    width: 150px;
-    top: 14px;
-    left: 250px;
-}
-
-.footer1 > #ftrD {
-    font-size: 15px;
-    cursor: pointer;
-    position: relative;
-    width: 150px;
-    top: -5px;
-    left: 530px;
-}
-
-.footer1 > #ftrE {
-    font-size: 15px;
-    cursor: pointer;
-    position: relative;
-    width: 150px;
-    top: 14px;
-    left: 250px;
-}
-
-.footer1 > #ftrF {
-    font-size: 15px;
-    cursor: pointer;
-    position: relative;
-    width: 150px;
-    top: -5px;
-    left: 530px;
+.footer1 > .subfooterD {
+    top: 10px;
+    left: 600px;
 }
 
 .footer1 > #ftr10 {
@@ -637,11 +510,6 @@ header > #main-nav #modo {
     width: 100%;
 }
 
-.footer1 > #ftr1 {
-    top: 200px;
-    left: 10px;
-}
-
 .footer1 > #ftr10 {
     top: 350px;
     width: 300px;
@@ -650,50 +518,6 @@ header > #main-nav #modo {
 
 .footer1 > #ftr10 p {
     font-size: 0.5rem;
-}
-
-.footer1 > #ftr2 {
-    top: 250px; 
-    left: 10px;
-} 
-.footer1 > #ftr6 {
-    top: 200px;
-    left: 10px;
-}
-
-.footer1 > #ftrB {
-    top: 160px;
-    left: 10px;
-}
-
-.footer1 > #ftrD {
-    top: 145px;
-    left: 10px;
-}
-
-.footer1 > #ftrF {
-    top: 130px;
-    left: 10px;
-}
-
-.footer1 > #ftr3 {
-    top: 225px;
-    left: 250px;
-}
-
-.footer1 > #ftr7 {
-    top: 190px;
-    left: 240px;
-}
-
-.footer1 > #ftr8 {
-    top: 190px;
-    left: 240px;
-}
-
-.footer1 > #ftr9 {
-    top: 190px;
-    left: 240px;
 }
 
 header {
@@ -813,11 +637,6 @@ header > .filterD {
         top: 5000px;
     }
 
-    .footer1 > #ftr1 {
-        top: 200px;
-        left: 10px;
-    }    
-
     .footer1 > #ftr10 {
         top: 350px;
         width: 400px;
@@ -828,50 +647,6 @@ header > .filterD {
         font-size: 0.5rem;
     }
         
-    .footer1 > #ftr2 {
-        top: 250px; 
-        left: 10px;
-    } 
-    .footer1 > #ftr6 {
-        top: 200px;
-        left: 10px;
-    }
-
-    .footer1 > #ftrB {
-        top: 160px;
-        left: 10px;
-    }
-
-    .footer1 > #ftrD {
-        top: 145px;
-        left: 10px;
-    }
-
-    .footer1 > #ftrF {
-        top: 130px;
-        left: 10px;
-    }
-
-    .footer1 > #ftr3 {
-        top: 225px;
-        left: 250px;
-    }
-
-    .footer1 > #ftr7 {
-        top: 190px;
-        left: 240px;
-    }
-
-    .footer1 > #ftr8 {
-        top: 190px;
-        left: 240px;
-    }
-
-    .footer1 > #ftr9 {
-        top: 190px;
-        left: 240px;
-    }
-
     header {
         width: 1024px;
     }
