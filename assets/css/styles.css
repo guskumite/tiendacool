@@ -113,64 +113,7 @@ header > .subheader {
     flex-direction: column;
     flex-wrap: wrap;
     top: 10;
-    overflow-x: scroll;
     z-index: 1000;
-}
-
-header > .subheader #idx4 {
-    font-size: 25px;
-    cursor: pointer;
-    position: absolute;
-    top: 80px;
-    left: 50px;
-    z-index: 2;
-    text-align: left;
-    width: 100%;
-}
-
-header > .subheader #idx5 {
-    font-size: 25px;
-    cursor: pointer;
-    position: absolute;
-    top: 110px;
-    left: 50px;
-    z-index: 2;
-    text-align: left;
-    width: 100%;
-}
-
-header > .subheader #idx6 {
-    font-size: 20px;
-    cursor: pointer;
-    position: absolute;
-    top: 170px;
-    left: 50px;
-    z-index: 2;
-    text-align: left;
-    width: 100%;
-}
-
-header > .subheader #idx7 {
-    font-size: 20px;
-    cursor: pointer;
-    position: absolute;
-    top: 220px;
-    left: 50px;
-    z-index: 2;
-    text-align: left;
-    width: 100%;
-}
-
-header > .subheader #idx8 {
-    font-size: 17px;
-    color: red;
-    cursor: pointer;
-    position: absolute;
-    top: 260px;
-    left: 50px;
-    z-index: 2;
-    text-align: left;
-    width: 100%;
 }
 
 header > .more {
@@ -517,10 +460,6 @@ header > .subheader {
     max-height: 100%;
 }
 
-header > .subheader > p {
-    max-width: 100%;
-}
-
 .cart {
     width: 100%;
 }
@@ -606,17 +545,6 @@ header > .filterD {
 
     .footer2 > #ftr10 p {
         font-size: 0.5rem;
-    }
-
-    header > .subheader {
-        width: 300px;
-        height: 300px;
-        max-width: 100%;
-        max-height: 100%;
-    }
-
-    header > .subheader > p {
-        max-width: 100%;
     }
             
     header > #main-nav #idx3 {
