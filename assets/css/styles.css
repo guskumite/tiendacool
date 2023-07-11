@@ -313,13 +313,18 @@ img {
     max-height: 80px;
 }
 
-.auxiliar > .cerrar {
-    font-size: 25px;
-    color: red;
+.auxiliar > .close {
     background-color: black;
-    position: fixed;
+    position: absolute;
     top: 0px;
     right: 0px;
+}
+
+.auxiliar > .close .cerrar {
+    font-size: 30px;
+    color: red;
+    background-color: black;
+    position: relative;
 }
 
 .product__img {
