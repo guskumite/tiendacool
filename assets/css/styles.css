@@ -277,9 +277,22 @@ img {
     bottom: 0;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
-.footer1 :nth-child(0) {
+.footer1 .subfooterA :nth-child(0) {
+    font-weight: bold;
+}
+
+.footer1 .subfooterB :nth-child(0) {
+    font-weight: bold;
+}
+
+.footer1 .subfooterC :nth-child(0) {
+    font-weight: bold;
+}
+
+.footer1 .subfooterD :nth-child(0) {
     font-weight: bold;
 }
 
