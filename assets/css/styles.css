@@ -619,11 +619,162 @@ img {
     cursor: pointer;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 300px) {
     .footer1 { 
     position: static;
-    max-width: 400px;
-   }
+    max-width: 300px;
+}
+
+.cart {
+    width: 100%;
+}
+
+.footer1 > #ftr10 {
+    top: 350px;
+    width: 300px;
+    height: 200px;
+}
+.footer1 > #ftr2 {
+    top: 250px; 
+    left: 10px;
+} 
+.footer1 > #ftr6 {
+    top: 200px;
+    left: 10px;
+}
+
+.footer1 > #ftrB {
+    top: 160px;
+    left: 10px;
+}
+
+.footer1 > #ftrD {
+    top: 145px;
+    left: 10px;
+}
+
+.footer1 > #ftrF {
+    top: 130px;
+    left: 10px;
+}
+
+.footer1 > #ftr3 {
+    top: 225px;
+    left: 250px;
+}
+
+.footer1 > #ftr7 {
+    top: 190px;
+    left: 240px;
+}
+
+.footer1 > #ftr8 {
+    top: 190px;
+    left: 240px;
+}
+
+.footer1 > #ftr9 {
+    top: 190px;
+    left: 240px;
+}
+
+header {
+    width: 300px;
+}
+
+header > #main-nav {
+    width: 300px;
+}  
+
+header > #main-nav #idx3 {
+    font-size: 0.7rem;
+    left: 130px;
+}
+
+header > #main-nav #idx2 {
+    font-size: 0.7rem;
+    left: 90px;
+}
+
+header > #main-nav #idx1 {
+    font-size: 0.7rem;
+    left: 40px;
+}
+
+header > #main-nav #idx0 {
+    font-size: 0.7rem;
+    position: relative;
+    top: 0px;
+    left: -10px;
+    
+}
+
+header > #idx4 {
+    font-size: 1rem;
+    left: 10px;
+    top: 60px;
+}
+
+header > #idx5 {
+    font-size: 1rem;
+    left: 10px;
+    top: 85px;
+}
+
+header > #idx6 {
+    font-weight: bold;
+    font-size: 0.5rem;
+    left: 10px;
+    top: 120px;
+}
+
+header > #idx7 {
+    font-weight: bold;
+    font-size: 0.6rem;
+    left: 10px;
+    top: 135px;
+}
+
+header > #idx8 {
+    font-weight: bold;
+    font-size: 0.9rem;
+    left: 10px;
+    top: 160px;
+}
+
+header > .more {
+    left: 10px;
+    top: 190px;
+}
+
+header > .filterA {
+    font-size: 0.5rem;
+    width: 80px;;
+    left: 10px;
+    top: 360px;
+}
+
+header > .filterB {
+    font-size: 0.5rem;
+    width: 80px;
+    left: 120px;
+    top: 360px;
+}
+
+header > .filterC {
+    font-size: 0.5rem;
+    width: 80px;
+    left: 230px;
+    top: 360px;
+}
+
+header > .filterD {
+    font-size: 0.5rem;
+    width: 80px;
+    left: 300px;
+    top: 360px;
+}
+
 }
 @media (max-width: 500px) {
     .cart {
