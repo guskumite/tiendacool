@@ -107,16 +107,17 @@ header > #main-nav #idx0 {
 header > .subheader {
     position: fixed;
     width: 200px;
+    height: 400px;
     left: 0;
     display: flex;
     flex-direction: column;
-    top: 0;
+    top: 150;
     overflow-x: scroll;
     z-index: 1000;
 }
 
 header > .subheader #idx4 {
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
     position: absolute;
     top: 110px;
@@ -127,7 +128,7 @@ header > .subheader #idx4 {
 }
 
 header > .subheader #idx5 {
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
     position: absolute;
     top: 150px;
@@ -138,7 +139,7 @@ header > .subheader #idx5 {
 }
 
 header > .subheader #idx6 {
-    font-size: 13px;
+    font-size: 20px;
     cursor: pointer;
     position: absolute;
     top: 200px;
@@ -149,7 +150,7 @@ header > .subheader #idx6 {
 }
 
 header > .subheader #idx7 {
-    font-size: 13px;
+    font-size: 20px;
     cursor: pointer;
     position: absolute;
     top: 225px;
