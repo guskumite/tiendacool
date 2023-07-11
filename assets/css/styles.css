@@ -106,7 +106,7 @@ header > #main-nav #idx0 {
 }
 
 header > #idx4 {
-    font-size: 35px;
+    font-size: 20px;
     cursor: pointer;
     position: absolute;
     top: 110px;
@@ -117,7 +117,7 @@ header > #idx4 {
 }
 
 header > #idx5 {
-    font-size: 35px;
+    font-size: 20px;
     cursor: pointer;
     position: absolute;
     top: 150px;
