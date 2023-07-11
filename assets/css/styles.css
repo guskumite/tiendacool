@@ -619,7 +619,7 @@ img {
 
 @media (min-width: 300px) && (max-width: 444px) {
     .footer1 { 
-    position: static;
+    position: fixed;
     max-width: 300px;
 }
 
@@ -799,7 +799,7 @@ header > .filterD {
 
     .footer1 {
         width: 1024px;
-        top: 4000px;
+        position: fixed;
         height: 500px;
     }
     .footer1 > #ftr10 {
