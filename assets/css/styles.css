@@ -275,26 +275,8 @@ img {
     padding: 1em;
     position: relative;
     bottom: 0;
-}
-
-.footer1 > .subfooterA {
-    top: 10px;
-    left 10px;
-}
-
-.footer1 > .subfooterB {
-    top: 10px;
-    left: 200px;
-}
-
-.footer1 > .subfooterC {
-    top: 10px;
-    left: 400px;
-}
-
-.footer1 > .subfooterD {
-    top: 10px;
-    left: 600px;
+    display: flex;
+    flex-direction: row;
 }
 
 .footer1 > #ftr10 {
