@@ -1,6 +1,11 @@
 async function getProducts() {
   try {
-    const data = await fetch("./data.json");
+    let aleatorio = parseInt((Math.random()*10).toString());
+    let data = "";
+    if (aleatorio === 0 || aleatorio === 1 || aleatorio === 2 || aleatorio === 3 ||
+        aleatorio === 4 || aleatorio === 5) 
+        data = await fetch("./data.json"); else
+        data = await fetch("https://ecommercebackend.fundamentos-29.repl.co");
 
     const res = await data.json();
 
@@ -509,7 +514,10 @@ function infoProducto(id, productos, kart, db) {
   btnfltD.addEventListener("click", function () { productFilter = "sweater"; printProducts(db,productFilter) });
 
   btnmodo = document.getElementById('modo');
-  btnmodo.addEventListener("click", function () { HTML1 = document.querySelector('body'); HTML1.classList.toggle('dark_mode'); });
+  btnmodo.addEventListener("click", function () { HTML1 = document.querySelector('body');
+          HTML1.classList.toggle('dark_mode');
+  
+          });
 
   const donde = document.querySelector(".products");
 

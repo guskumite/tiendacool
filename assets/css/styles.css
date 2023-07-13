@@ -3,16 +3,18 @@
     --altura-header: 50px;
     --color-back-dark: black;
     --color-back-light: white;
+    --color-link-light: lightgray;
+    --color-link-dark: grey;
 }
 
 .dark_mode {
     background-color: var(--color-back-dark);
-    color: var(--color-back-light);
+    color: var(--color-back-light);    
 }
 
 a:link, a:visited, a:active {
     text-decoration:none;
-    color: grey;
+    color: var(--color-link-light);
 }
 
 * {
@@ -282,6 +284,18 @@ img {
     align-items: center;
 }
 
+.footer2 > #ftr11 {
+    background-color: lightsalmon;
+    color: gray;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    top: 40px;
+    left: 0px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+}
 
 /* ==================================>               Products */
 
@@ -509,10 +523,22 @@ img {
     font-size: 0.5rem;
 }
 
+.footer2 > #ftr11 {
+    top: 350px;
+    width: 300px;
+    height: 200px;
+}
+
+.footer2 > #ftr11 p {
+    font-size: 0.5rem;
+}
+
 header > #main-nav #idx3 {
     font-size: 0.7rem;
     left: 130px;
 }
+
+
 
 header > #main-nav #idx2 {
     font-size: 0.7rem;
@@ -581,6 +607,16 @@ header > .filterD {
     .footer2 > #ftr10 p {
         font-size: 0.5rem;
     }
+
+    .footer2 > #ftr11 {
+        top: 400px;
+        width: 400px;
+        height: 200px;
+    }
+
+    .footer2 > #ftr11 p {
+        font-size: 0.5rem;
+    }    
             
     header > #main-nav #idx3 {
         font-size: 0.7rem;
